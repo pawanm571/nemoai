@@ -1,9 +1,9 @@
-# Google AI Chat - Streamlit App
+# NemoAI - Your own AI ChatBot!!
 
 
 ## Overview
 
-Google AI Chat is an AI-powered chat application built with Streamlit and Python. This application allows you to interact with Google AI language generation models, specifically based on the models **gemini-pro** and **gemini-pro-vision**. It is capable of answering questions, describing images, reading text and table files, generating graphs with Graphviz, and much more.
+NemoAI Chat is an AI-powered chat application built with Streamlit and Python. This application allows you to interact with Google AI language generation models, specifically based on the models **gemini-pro** and **gemini-pro-vision**. It is capable of answering questions, describing images, reading text and table files, generating graphs with Graphviz, and much more.
 
 ![Google AI Chat](https://seeklogo.com/images/G/google-ai-logo-996E85F6FD-seeklogo.com.png)
 
