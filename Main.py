@@ -109,9 +109,9 @@ if 'messages' not in st.session_state:
 if 'welcome' not in st.session_state or lang != st.session_state.lang:
     st.session_state.lang = lang
     welcome  = model.generate_content(f'''
-    Da un saludo de bienvenida al usuario y sugiere que puede hacer
-    (Puedes describir imágenes, responder preguntas, leer archivos texto, leer tablas,generar gráficos con graphviz, etc)
-    eres un chatbot en una aplicación de chat creada en streamlit y python. generate the answer in {lang}''')
+    Greets the user and suggests what they can do
+     (You can describe images, answer questions, read text files, read tables, generate graphs with graphviz, etc.)
+     You are a chatbot in a chat application created in streamlit and python. generate the answer in {lang}''')
     welcome.resolve()
     st.session_state.welcome = welcome
 
@@ -152,32 +152,16 @@ if len(st.session_state.chat_session) > 0:
 cols=st.columns(4)
 
 with cols[0]:
-    if lang == 'Español':
-      image_atachment = st.toggle("Adjuntar imagen", value=False, help="Activa este modo para adjuntar una imagen y que el chatbot pueda leerla")
-    else:
       image_atachment = st.toggle("Attach image", value=False, help="Activate this mode to attach an image and let the chatbot read it")
 
 with cols[1]:
-    if lang == 'Español':
-      txt_atachment = st.toggle("Adjuntar archivo de texto", value=False, help="Activa este modo para adjuntar un archivo de texto y que el chatbot pueda leerlo")
-    else:
-      txt_atachment = st.toggle("Attach text file", value=False, help="Activate this mode to attach a text file and let the chatbot read it")
+    txt_atachment = st.toggle("Attach text file", value=False, help="Activate this mode to attach a text file and let the chatbot read it")
 with cols[2]:
-    if lang == 'Español':
-      csv_excel_atachment = st.toggle("Adjuntar CSV o Excel", value=False, help="Activa este modo para adjuntar un archivo CSV o Excel y que el chatbot pueda leerlo")
-    else:
-      csv_excel_atachment = st.toggle("Attach CSV or Excel", value=False, help="Activate this mode to attach a CSV or Excel file and let the chatbot read it")
+    csv_excel_atachment = st.toggle("Attach CSV or Excel", value=False, help="Activate this mode to attach a CSV or Excel file and let the chatbot read it")
 with cols[3]:
-    if lang == 'Español':
-      graphviz_mode = st.toggle("Modo graphviz", value=False, help="Activa este modo para generar un grafo con graphviz en .dot a partir de tu mensaje")
-    else:
-      graphviz_mode = st.toggle("Graphviz mode", value=False, help="Activate this mode to generate a graph with graphviz in .dot from your message")
+    graphviz_mode = st.toggle("Graphviz mode", value=False, help="Activate this mode to generate a graph with graphviz in .dot from your message")
 if image_atachment:
-    if lang == 'Español':
-      image = st.file_uploader("Sube tu imagen", type=['png', 'jpg', 'jpeg'])
-      url = st.text_input("O pega la url de tu imagen")
-    else:
-      image = st.file_uploader("Upload your image", type=['png', 'jpg', 'jpeg'])
+    image = st.file_uploader("Upload your image", type=['png', 'jpg', 'jpeg'])
       url = st.text_input("Or paste your image url")
 else:
     image = None
@@ -186,24 +170,15 @@ else:
 
 
 if txt_atachment:
-    if lang == 'Español':
-      txtattachment = st.file_uploader("Sube tu archivo de texto", type=['txt'])
-    else:
-      txtattachment = st.file_uploader("Upload your text file", type=['txt'])
+    txtattachment = st.file_uploader("Upload your text file", type=['txt'])
 else:
     txtattachment = None
 
 if csv_excel_atachment:
-    if lang == 'Español':
-      csvexcelattachment = st.file_uploader("Sube tu archivo CSV o Excel", type=['csv', 'xlsx'])
-    else:
-      csvexcelattachment = st.file_uploader("Upload your CSV or Excel file", type=['csv', 'xlsx'])
+    csvexcelattachment = st.file_uploader("Upload your CSV or Excel file", type=['csv', 'xlsx'])
 else:
     csvexcelattachment = None
-if lang == 'Español':
-  prompt = st.chat_input("Escribe tu mensaje")
-else:
-  prompt = st.chat_input("Write your message")
+prompt = st.chat_input("Write your message")
 
 if prompt:
     txt = ''
@@ -222,10 +197,7 @@ if prompt:
         txt += '   Dataframe: \n' + str(df)
 
     if graphviz_mode:
-        if lang == 'Español':
-          txt += '   Genera un grafo con graphviz en .dot \n'
-        else:
-          txt += '   Generate a graph with graphviz in .dot \n'
+        txt += '   Generate a graph with graphviz in .dot \n'
 
     if len(txt) > 5000:
         txt = txt[:5000] + '...'
@@ -240,10 +212,7 @@ if prompt:
 
     append_message(prmt)
 
-    if lang == 'Español':
-      spinertxt = 'Espera un momento, estoy pensando...'
-    else:
-      spinertxt = 'Ji pappa ji...'
+    spinertxt = 'Ji pappa ji...'
     with st.spinner(spinertxt):
         if len(prmt['parts']) > 1:
             response = vision.generate_content(prmt['parts'],stream=True,safety_settings=[
