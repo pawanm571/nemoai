@@ -162,7 +162,7 @@ with cols[3]:
     graphviz_mode = st.toggle("Graphviz mode", value=False, help="Activate this mode to generate a graph with graphviz in .dot from your message")
 if image_atachment:
     image = st.file_uploader("Upload your image", type=['png', 'jpg', 'jpeg'])
-      url = st.text_input("Or paste your image url")
+    url = st.text_input("Or paste your image url")
 else:
     image = None
     url = ''
