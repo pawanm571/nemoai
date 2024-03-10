@@ -25,12 +25,7 @@ st.caption("By Pawan, Himanshu")
 langcols = st.columns([0.2,0.8])
 with langcols[0]:
   lang = st.selectbox('Amrika ka dalal',
-  ('English', 'Español', 'Français', 'Deutsch',
-  'Italiano', 'Português', 'Polski', 'Nederlands',
-  'Русский', '日本語', '한국어', '中文', 'العربية',
-  'हिन्दी', 'Türkçe', 'Tiếng Việt', 'Bahasa Indonesia',
-  'ภาษาไทย', 'Română', 'Ελληνικά', 'Magyar', 'Čeština',
-  'Svenska', 'Norsk', 'Suomi', 'Dansk', 'हिन्दी', 'हिन्�'),index=0)
+  ('English'),index=0)
 
 if 'lang' not in st.session_state:
     st.session_state.lang = lang
@@ -132,10 +127,7 @@ if len(st.session_state.chat_session) > 0:
                 if len(graphs) > 0:
                     for graph in graphs:
                         st.graphviz_chart(graph,use_container_width=False)
-                        if lang == 'Español':
-                          view = "Ver texto"
-                        else:
-                          view = "View text"
+                        view = "View text"
                         with st.expander(view):
                           st.code(graph, language='dot')
         else:
@@ -184,10 +176,7 @@ if prompt:
     txt = ''
     if txtattachment:
         txt = txtattachment.getvalue().decode("utf-8")
-        if lang == 'Español':
-          txt = '   Archivo de texto: \n' + txt
-        else:
-          txt = '   Text file: \n' + txt
+        txt = '   Text file: \n' + txt
 
     if csvexcelattachment:
         try:
