@@ -16,7 +16,7 @@ st.set_page_config(
 #------------------------------------------------------------
 #HEADER
 st.markdown('''
-Powered by Old Monk <img src="https://banner2.cleanpng.com/20180630/rlg/kisspng-liqueur-old-monk-rum-mohan-meakin-distilled-bevera-old-monk-5b37954e2d95e1.6050627115303693581867.jpg" width="20" height="20">
+Powered by Gemini <img src="https://play-lh.googleusercontent.com/DDIUuR0XwdSLnuuyOTn3STuoemW_M1qCSLHs8HE6DJq0NrwUNxYafZ2qG-78Uxj76Q" width="20" height="20">
 , Streamlit and Python''', unsafe_allow_html=True)
 st.caption("By Pawan, Himanshu")
 
@@ -24,7 +24,7 @@ st.caption("By Pawan, Himanshu")
 #LANGUAGE
 langcols = st.columns([0.2,0.8])
 with langcols[0]:
-  lang = st.selectbox('Amrika ka dalal',
+  lang = st.selectbox('Select your language',
   ('English', 'Español', 'Français', 'Deutsch',
   'Italiano', 'Português', 'Polski', 'Nederlands',
   'Русский', '日本語', '한국어', '中文', 'العربية',
@@ -212,7 +212,7 @@ if prompt:
 
     append_message(prmt)
 
-    spinertxt = 'Ji pappa ji...'
+    spinertxt = 'Thinking...'
     with st.spinner(spinertxt):
         if len(prmt['parts']) > 1:
             response = vision.generate_content(prmt['parts'],stream=True,safety_settings=[
