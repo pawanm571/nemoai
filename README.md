@@ -7,7 +7,7 @@ NemoAI Chat is an AI-powered chat application built with Streamlit and Python. T
 
 ![Google AI Chat](https://seeklogo.com/images/G/google-ai-logo-996E85F6FD-seeklogo.com.png)
 
-[Streamlit App](https://sergiolm-ai.streamlit.app/)
+[Streamlit App](https://nemoai.streamlit.app/)
 
 ---
 
