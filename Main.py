@@ -20,6 +20,16 @@ Powered by Gemini <img src="https://play-lh.googleusercontent.com/DDIUuR0XwdSLnu
 , Streamlit and Python''', unsafe_allow_html=True)
 st.caption("By Pawan, Himanshu")
 
+st.markdown(
+    r"""
+    <style>
+    .stDeployButton {
+            visibility: hidden;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
 #------------------------------------------------------------
 #LANGUAGE
 langcols = st.columns([0.2,0.8])
