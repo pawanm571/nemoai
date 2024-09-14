@@ -7,7 +7,7 @@ import requests
 
 
 st.set_page_config(
-    page_title="Nemo",
+    page_title="Nemo2.0",
     page_icon="https://seeklogo.com/images/F/Finding_Nemo-logo-4D041797FC-seeklogo.com.png",
     layout="wide",
 )
