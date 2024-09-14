@@ -102,7 +102,7 @@ def load_modelvision() -> genai.GenerativeModel:
     The function `load_modelvision` loads a generative model for vision tasks using the `gemini-pro-vision` model.
     :return: an instance of the `genai.GenerativeModel` class.
     """
-    model = genai.GenerativeModel('gemini-pro-vision')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     return model
 
 
