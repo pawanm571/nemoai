@@ -93,7 +93,10 @@ def load_model() -> genai.GenerativeModel:
     'gemini-pro'.
     :return: an instance of the `genai.GenerativeModel` class.
     """
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel( 
+        model_name="gemini-1.5-flash",
+        system_instruction="You are NemoAI, an AI chatbot created by Pawan!",
+    )
     return model
 
 @st.cache_resource
